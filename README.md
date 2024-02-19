@@ -11,6 +11,11 @@ The UserController class is responsible for handling HTTP requests and responses
 
 The @Entity annotation specifies that this class is a JPA entity and should be mapped to a database table. The @Id annotation specifies that the userId attribute is the primary key of the table and should be auto-generated.
 
+The @Id annotation is inherited from javax.persistence.Id, indicating the member field below is the primary key of the current entity. 
+
+@Autowired it allows Spring to resolve and inject collaborating beans into our bean.
+
+@GeneratedValue annotation is generally used in conjunction with @Id annotation to automatically generate unique values for primary key columns within our database tables
 The JpaRepository interface provides many built-in methods for CRUD operations on the entity class. Since this interface does not specify the entity class type, it is necessary to provide the UserTable entity class as a generic type argument to the JpaRepository interface.
 
 ## Endpoints
